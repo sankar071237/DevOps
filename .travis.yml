@@ -1,13 +1,9 @@
-language: java
-jdk:
-  - openjdk8
-# git strips the wrapper jar file so we have to force its download during the build
-install:
-- mvn -N io.takari:maven:wrapper
-- ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-script: ./mvnw clean install
-# creating a pipeline to run Test
-jobs:
-  include:
-    - stage: Test
-      script: ./mvnw clean test
+language: bash 
+
+sudo: required   
+
+services:    
+  - docker     
+  
+script:    
+  - echo "Hello World!!!!"
